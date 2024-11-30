@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<head>
+    <title> About Us </title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Special for a library that sells e-books">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../Css/Style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../JavaScript/myFunctions.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <!-- Logo/Brand -->
+            <div class="brand">
+                <a href="home.html">BookStore</a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="About Us.html" class="active">About</a></li>
+            </ul>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Search books...">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Search Results Popup (Move outside of search-bar div) -->
+            <div id="searchResultsPopup" class="search-results-popup">
+                <div class="search-results-content">
+                    <span class="close-search" onclick="closeSearchResults()">&times;</span>
+                    <div id="searchResultsGrid" class="search-results-grid"></div>
+                </div>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                <button class="signin-btn" onclick="showSignInError()">Sign In</button>
+                <button class="login-btn" onclick="showLogInError()">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+    <!-- <div class="search-results-popup" id="searchResultsPopup">
+        <div class="search-results-content">
+            <span class="close-search" onclick="closeSearchResults()">&times;</span>
+            <div class="search-results-grid" id="searchResultsGrid">
+                <!-- Results will be displayed here -->
+    <!-- </div>
+    </div>
+    </div> -->
+    <div class="about-container">
+        <div class="about-header">
+            <div class="about-image">
+                <img src="../images/library-image.jpg" alt="Our Library">
+            </div>
+            <div class="about-title">
+                <h1>One Thousand and One Nights Library</h1>
+                <p class="tagline">Your Gateway to Knowledge and Literature</p>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <div class="mission-section">
+                <h2>Our Mission</h2>
+                <div class="mission-cards">
+                    <div class="mission-card">
+                        <i class="fas fa-book-reader"></i>
+                        <h3>Digital Access</h3>
+                        <p>Providing seamless access to digital literature worldwide</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Global Reach</h3>
+                        <p>Making knowledge accessible across languages and cultures</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>Building a vibrant community of book enthusiasts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-description">
+                <p>In an era in which the pace of technology is accelerating and dependence on the digital space is increasing, electronic libraries have become one of the most prominent forms of consumption of knowledge and literature.</p>
+
+                <p>Among these electronic libraries, the "One Thousand and One Nights" library stands out as one of the distinguished destinations for reading lovers. This library provides its users with access to a variety of books and publications in multiple
+                    fields, including Arabic and international literature, novels, short stories, and scientific books.</p>
+
+                <p>The "One Thousand and One Nights" library was established with the aim of enriching Arabic content and providing an easy and convenient platform for readers, where they can search for favorite books, read them, and share them online.</p>
+                <p>In an era where technology is rapidly evolving and digital spaces are becoming increasingly integral to our lives, electronic libraries have emerged as the cornerstone of modern knowledge consumption. Our digital library stands at the
+                    forefront of this revolution, offering a seamless bridge between traditional literary excellence and cutting-edge digital accessibility.</p>
+
+                <p>The "One Thousand and One Nights" library has established itself as a premier destination for book enthusiasts worldwide. Our vast collection spans multiple genres and languages, featuring over 100,000 titles across categories including
+                    contemporary fiction, classical literature, academic textbooks, research papers, and rare manuscripts. We take pride in offering content in multiple languages, making knowledge accessible to diverse communities globally.</p>
+
+                <p>Founded in 2020, our library was born from a vision to democratize knowledge and make quality literature accessible to everyone. We've partnered with over 50 leading publishing houses worldwide to ensure our content meets the highest standards
+                    of academic and literary excellence. Our platform supports multiple reading formats, including PDF, EPUB, and audio books, making literature accessible to readers of all preferences and abilities.</p>
+
+                <p>What sets us apart is our commitment to innovation and user experience. Our advanced search algorithms and personalized recommendation system help readers discover new books tailored to their interests. We've implemented AI-powered reading
+                    tools that assist with comprehension, translation, and note-taking, making the reading experience more engaging and productive.</p>
+
+                <p>Community engagement is at the heart of our mission. Through our virtual book clubs, author interaction sessions, and reading challenges, we've built a vibrant community of over 500,000 active readers. Our platform enables readers to share
+                    reviews, create reading lists, and participate in literary discussions, fostering a collaborative learning environment.</p>
+
+                <p>Looking to the future, we're constantly evolving with new features and improvements based on user feedback. Our upcoming initiatives include expanded academic resources, enhanced accessibility features, and partnerships with educational
+                    institutions worldwide. Join us in our journey to make quality literature accessible to everyone, anywhere, anytime.</p>
+            </div>
+        </div>
+    </div>
+    <div id="notification" class="notification">
+        <p></p>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email:</p>
+                <ul>
+                    <li>lojen_233847@svuonline.org</li>
+                    <li>mouaz_238996@svuonline.org</li>
+                    <li>abd_allah_251479@svuonline.org</li>
+                    <li>abd_alghani_243780@svuonline.org</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="About Us.html">About</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 BookStore. All rights reserved. | Syrian Virtual University</p>
+        </div>
+    </footer>
+    <script src="../JavaScript/myFunctions.js"></script>
+</body>

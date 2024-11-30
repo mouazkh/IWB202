@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Books</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Special for a library that sells e-books">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../Css/Style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../JavaScript/myFunctions.js"></script>
+
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <!-- Logo/Brand -->
+            <div class="brand">
+                <a href="home.html">BookStore</a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="books.html" class="active">Books</a></li>
+                <li><a href="About Us.html">About</a></li>
+            </ul>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <form id="searchForm" onsubmit="handleSearch(event)">
+                    <input type="text" id="searchInput" placeholder="Search books...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                <button class="signin-btn" onclick="showSignInError()">Sign In</button>
+                <button class="login-btn" onclick="showLogInError()">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+    <div class="search-results-popup" id="searchResultsPopup">
+        <div class="search-results-content">
+            <span class="close-search" onclick="closeSearchResults()">&times;</span>
+            <div class="search-results-grid" id="searchResultsGrid">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="books-container">
+        <!-- Books will be displayed here -->
+    <!-- </div> -->
+    <div class="book-table-container">
+        <table border="border" cellspacing="10" class="book-table">
+            <caption>
+                <h3><b> Books And Detials : </b></h3>
+            </caption>
+            <tr>
+                <th align="right">أختيار</th>
+                <th align="right"> أظهار التفاصيل</th>
+                <th align="right"> السعر</th>
+                <th align="right"> العنوان</th>
+                <th align="right"> رمز الكتاب </th>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 1" /></td>
+                <td align="center"><input type="checkbox" name="CO1" value="Book 1" /></td>
+                <td align="right">25000 S.P</td>
+                <td align="right"> الف ليلة وليلة</td>
+                <td align="right">978_9770916738</td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book1" class="details">
+                        <h4>ألف ليلة وليلة</h4>
+                        <p><strong>الناشر:</strong> دار المعارف</p>
+                        <p><strong>تصنيف الكتاب:</strong> قصص شعبية</p>
+                        <p><strong>ملخص:</strong> كتاب أسطوري يضم مجموعة من القصص الشعبية من الشرق الأوسط وجنوب آسيا وشمال إفريقيا.</p>
+                        <p>تم سرد القصص ضمن إطار قصة مركزية تتضمن الشخصية الرئيسية شهرزاد، التي تحكي حكايات للملك شهريار لتأجيل إعدامه.</p>
+                        <p><strong><span>:</span>اهم ثلاث قصص</strong></p>
+                        <div class="book-image">
+                            <img src="../images/Seven Travels.jpg" title="رحلات السندباد السبع" alt="رحلات السندباد السبع">
+                            <img src="../images/AliBaba.jpg" title="علي بابا والأربعون حرامي" alt="علي بابا والأربعون حرامي">
+                            <img src="../images/alaa Alden And The LightMAgic.jpg" title="علاء الدين والمصباح السحري" alt="علاء الدين والمصباح السحري">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 2" /></td>
+                <td align="center"><input type="checkbox" name="CO2" value="Book 2" /></td>
+                <td align="right">12000 S.P</td>
+                <td align="right"> موسم الهجرة الى الشمال </td>
+                <td align="right">978_9953891718</td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book2" class="details">
+                        <h4>موسم الهجرة الى الشمال</h4>
+                        <p><strong>الناشر:</strong> دار العودة</p>
+                        <p><strong>تصنيف الكتاب:</strong> رواية أدبية</p>
+                        <p><strong>ملخص:</strong> رواية للكاتب السوداني الطيب صالح تتناول قضايا الهوية والصراع الثقافي بين الشرق والغرب.</p>
+                        <div class="book-image">
+                            <img src="../images/Travel To North.jpg" alt="موسم الهجرة الى الشمال">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 3" /></td>
+                <td align="center"><input type="checkbox" name="CO3" value="Book 3" /></td>
+                <td align="right"> 10000 S.P</td>
+                <td align="right"> الخبز الحافي </td>
+                <td align="right">978_9953451080</td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book3" class="details">
+                        <h4>الخبز الحافي</h4>
+                        <p><strong>الناشر:</strong> دار الساقي</p>
+                        <p><strong>تصنيف الكتاب:</strong> سيرة ذاتية</p>
+                        <p><strong>ملخص:</strong> سيرة ذاتية للكاتب المغربي محمد شكري تحكي قصة كفاحه في الحياة.</p>
+                        <div class="book-image">
+                            <img src="../images/Bread.jpg" alt="الخبز الحافي">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 4" /></td>
+                <td align="center"><input type="checkbox" name="CO4" value="Book 4" /></td>
+                <td align="right">40000 S.P</td>
+                <td align="right"> في ديسمبر تنتهي الاحلام </td>
+                <td align="right">978_9953854627</td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book4" class="details">
+                        <h4>في ديسمبر تنتهي الاحلام</h4>
+                        <p><strong>الناشر:</strong> دار المعارف</p>
+                        <p><strong>تصنيف الكتاب:</strong> رواية أدبية</p>
+                        <p><strong>ملخص:</strong> رواية للكاتب السوداني الطيب صالح تتناول قضايا الهوية والصراع الثقافي بين الشرق والغرب.</p>
+                        <div class="book-image">
+                            <img src="../images/Dreams End In December.jpg" alt="في ديسمبر تنتهي الاحلام">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 5" /></td>
+                <td align="center"><input type="checkbox" name="CO5" value="Book 5" /></td>
+                <td align="right">35000 S.P</td>
+                <td align="right"> أرض زيكولا</td>
+                <td align="right">978_9954679258</td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book5" class="details">
+                        <h4>أرض زيكولا</h4>
+                        <p><strong>الناشر:</strong> دار المعارف</p>
+                        <p><strong>تصنيف الكتاب:</strong> رواية أدبية</p>
+                        <p><strong>ملخص:</strong> رواية للكاتب السوداني الطيب صالح تتناول قضايا الهوية والصراع الثقافي بين الشرق والغرب.</p>
+                        <div class="book-image">
+                            <img src="../images/Zekola Land.jpg" alt="أرض زيكولا">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 6" /></td>
+                <td align="center"><input type="checkbox" name="CO6" value="Book 6" /></td>
+                <td align="right">39000 S.P</td>
+                <td align="right"> اماريتا</td>
+                <td align="right">978_9954678529</td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book6" class="details">
+                        <h4>اماريتا</h4>
+                        <p><strong>الناشر:</strong> دار المعارف</p>
+                        <p><strong>تصنيف الكتاب:</strong> رواية أدبية</p>
+                        <p><strong>ملخص:</strong> رواية للكاتب السوداني الطيب صالح تتناول قضايا الهوية والصراع الثقافي بين الشرق والغرب.</p>
+                        <div class="book-image">
+                            <img src="../images/Amareta.jpg" alt="اماريتا">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="radio" name="choos book" value="book 7" /></td>
+                <td align="center"><input type="checkbox" name="CO7" value="Book 7" /></td>
+                <td align="right">25000 S.P</td>
+                <td align="right"> نظرية الفستق</td>
+                <td align="right">978_9953624891 </td>
+            </tr>
+            <tr class="details-row">
+                <td colspan="5">
+                    <div id="book7" class="details">
+                        <h4>نظرية الفستق</h4>
+                        <p><strong>الناشر:</strong> دار المعارف</p>
+                        <p><strong>تصنيف الكتاب:</strong> رواية أدبية</p>
+                        <p><strong>ملخص:</strong> رواية للكاتب السوداني الطيب صالح تتناول قضايا الهوية والصراع الثقافي بين الشرق والغرب.</p>
+                        <div class="book-image">
+                            <img src="../images/Nut Theory.jpg" alt="نظرية الفستق">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="button-container">
+        <button type="button" class="action-button">متابعة</button>
+    </div>
+    <!-- Popup Form -->
+    <div id="orderForm" class="popup-form">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>معلومات الطلب</h2>
+            <form id="bookOrderForm">
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل:</label>
+                    <input type="text" id="fullName" name="fullName" required pattern="[\u0600-\u06FF\s]+" title="الرجاء إدخال الاسم باللغة العربية فقط">
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="09\d{8}" title="يجب أن يبدأ رقم الهاتف ب 09 ويتكون من 10 أرقام">
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                    <label for="dob">تاريخ الميلاد:</label>
+                    <input type="text" id="dob" name="dob" required pattern="(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-\d{4}" placeholder="DD-MM-YYYY" title="الرجاء إدخال التاريخ بالصيغة DD-MM-YYYY">
+                </div>
+
+                <!-- National Number -->
+                <div class="form-group">
+                    <label for="nationalNumber">الرقم الوطني:</label>
+                    <div class="national-number-container">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="08">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="06">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="07">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="04">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="05">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="03">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="02">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="01">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="09">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="10">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="11">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="12">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="13">
+                        <input type="text" maxlength="2" class="national-digit" placeholder="14">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">إرسال</button>
+            </form>
+        </div>
+    </div>
+    <div id="notification" class="notification">
+        <p>تمت العملية بنجاح!</p>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email:</p>
+                <ul>
+                    <li>lojen_233847@svuonline.org</li>
+                    <li>mouaz_238996@svuonline.org</li>
+                    <li>abd_allah_251479@svuonline.org</li>
+                    <li>abd_alghani_243780@svuonline.org</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="About Us.html">About</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 BookStore. All rights reserved. | Syrian Virtual University</p>
+        </div>
+    </footer>
+    <script src="../JavaScript/myFunctions.js"></script>
+</body>

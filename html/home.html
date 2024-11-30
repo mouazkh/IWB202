@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<head>
+    <title>home.html</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Special for a library that sells e-books">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../Css/Style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../JavaScript/myFunctions.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <!-- Logo/Brand -->
+            <div class="brand">
+                <a href="home.html">BookStore</a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="About Us.html">About</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Search books...">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Search Results Popup (Move outside of search-bar div) -->
+            <div id="searchResultsPopup" class="search-results-popup">
+                <div class="search-results-content">
+                    <span class="close-search" onclick="closeSearchResults()">&times;</span>
+                    <div id="searchResultsGrid" class="search-results-grid"></div>
+                </div>
+            </div>
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                <button class="signin-btn" onclick="showSignInError()">Sign In</button>
+                <button class="login-btn" onclick="showLogInError()">Sign Up</button>
+            </div>
+        </nav>
+
+
+    </header>
+    <!-- <div class="search-results-popup" id="searchResultsPopup">
+        <div class="search-results-content">
+            <span class="close-search" onclick="closeSearchResults()">&times;</span>
+            <div class="search-results-grid" id="searchResultsGrid">
+                <!-- Results will be displayed here -->
+    <!-- </div>
+    </div>
+    </div> -->
+    <div class="container">
+        <div class="team-header">
+            <h1>Our Team</h1>
+            <p class="tagline">Meet the developers behind BookStore</p>
+        </div>
+
+        <div class="team-cards">
+            <!-- Student 1 Card -->
+            <div class="team-card">
+                <div class="card-header">
+                    <div class="profile-image">
+                        <img src="../images/mouaz-profile.png" alt="Mouaz's profile" onerror="this.src='images/default-avatar.png'">
+                    </div>
+                    <div class="student-number">Student 1</div>
+                </div>
+                <div class="card-content">
+                    <h3>معاذ بشار الخطيب</h3>
+                    <p class="english-name">Mouaz Bashar Alkatib</p>
+                    <p class="student-id">mouaz_238996</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Student 2 Card -->
+            <div class="team-card">
+                <div class="card-header">
+                    <div class="profile-image">
+                        <img src="../images/lojen-profile.png" alt="Lojen's profile" onerror="this.src='images/default-avatar.png'">
+                    </div>
+                    <div class="student-number">Student 2</div>
+                </div>
+                <div class="card-content">
+                    <h3>لجين محمد جمال الكفيري</h3>
+                    <p class="english-name">Lojen Mohamad Jamal Alkfere</p>
+                    <p class="student-id">lojen_233847</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Student 3 Card -->
+            <div class="team-card">
+                <div class="card-header">
+                    <div class="profile-image">
+                        <img src="../images/Abdallah.jpg" alt="Abdallah's profile" onerror="this.src='images/default-avatar.png'">
+                    </div>
+                    <div class="student-number">Student 3</div>
+                </div>
+                <div class="card-content">
+                    <h3>عبد الله عماد الدين شامية</h3>
+                    <p class="english-name">Abdullah Emad Alden Shamea</p>
+                    <p class="student-id">abd_allah_251479</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for Student 2 and 3 -->
+        </div>
+    </div>
+    <div id="notification" class="notification">
+        <p></p>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email:</p>
+                <ul>
+                    <li>lojen_233847@svuonline.org</li>
+                    <li>mouaz_238996@svuonline.org</li>
+                    <li>abd_allah_251479@svuonline.org</li>
+                    <li>abd_alghani_243780@svuonline.org</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="About Us.html">About</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 BookStore. All rights reserved. | Syrian Virtual University</p>
+        </div>
+    </footer>
+    <script src="../JavaScript/myFunctions.js"></script>
+</body>
