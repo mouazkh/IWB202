@@ -919,6 +919,7 @@ h3 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    /* margin-top: 448px; */
 }
 
 .popup-content {
@@ -930,6 +931,7 @@ h3 {
     max-width: 600px;
     border-radius: 8px;
     direction: rtl;
+    /* margin-top: 448px; */
 }
 
 .close-btn {
@@ -1394,6 +1396,7 @@ h3 {
     }
     .popup-content {
         margin: 2% auto;
+        margin-top: 448px;
     }
 }
 
@@ -1940,6 +1943,7 @@ h3 {
     .popup-content {
         width: 95%;
         padding: 15px;
+        margin-top: 448px;
     }
 }
 
@@ -1947,5 +1951,6 @@ h3 {
     .popup-content {
         width: 100%;
         padding: 10px;
+        margin-top: 500px;
     }
 }
