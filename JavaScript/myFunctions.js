@@ -170,8 +170,8 @@ function validateForm() {
         alert('الرجاء إدخال بريد إلكتروني صحيح');
         return false;
     }
-    if (!/^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-\d{4}$/.test(dob)) {
-        alert('الرجاء إدخال تاريخ الميلاد بالصيغة الصحيحة DD-MM-YYYY');
+    if (!dob) {
+        alert('الرجاء اختيار تاريخ الميلاد');
         return false;
     }
     if (nationalDigits.length !== 28) {
