@@ -247,22 +247,7 @@
                 <!-- National Number -->
                 <div class="form-group">
                     <label for="nationalNumber">الرقم الوطني:</label>
-                    <div class="national-number-container">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="08">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="06">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="07">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="04">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="05">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="03">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="02">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="01">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="09">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="10">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="11">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="12">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="13">
-                        <input type="text" maxlength="2" class="national-digit" placeholder="14">
-                    </div>
+                    <input type="text" id="nationalNumber" name="nationalNumber" required pattern="\d{11}" title="يجب أن يتكون الرقم الوطني من 11 رقمًا">
                 </div>
 
                 <button type="submit" class="submit-btn">إرسال</button>

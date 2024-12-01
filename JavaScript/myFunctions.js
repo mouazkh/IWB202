@@ -156,7 +156,7 @@ function validateForm() {
     const phone = $('#phone').val();
     const email = $('#email').val();
     const dob = $('#dob').val();
-    const nationalDigits = $('.national-digit').map((_, el) => $(el).val()).get().join('');
+    const nationalNumber = $('#nationalNumber').val();
 
     if (!/[\u0600-\u06FF\s]+/.test(fullName)) {
         alert('الرجاء إدخال الاسم باللغة العربية');
@@ -174,8 +174,8 @@ function validateForm() {
         alert('الرجاء اختيار تاريخ الميلاد');
         return false;
     }
-    if (nationalDigits.length !== 28) {
-        alert('الرجاء إدخال الرقم الوطني كاملاً');
+    if (!/^\d{11}$/.test(nationalNumber)) {
+        alert('الرجاء إدخال الرقم الوطني كاملاً (11 رقمًا)');
         return false;
     }
     return true;
